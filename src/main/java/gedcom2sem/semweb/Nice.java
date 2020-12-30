@@ -14,18 +14,20 @@
 // @formatter:on
 package gedcom2sem.semweb;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 
 /**
  * Prevent download bans (temporarily not available) by waiting between issuing q request.
  */
 public class Nice
 {
-    private static final Logger logger = Logger.getLogger(Nice.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(Nice.class.getName());
 
     private static Map<String, Date> hostLastTimeMap = new HashMap<String, Date>();
     private static Map<String, Long> hostIntervalMap = new HashMap<String, Long>();

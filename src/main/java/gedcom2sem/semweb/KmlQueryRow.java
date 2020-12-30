@@ -14,10 +14,10 @@
 // @formatter:on
 package gedcom2sem.semweb;
 
-import java.util.List;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.rdf.model.RDFNode;
 
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.rdf.model.RDFNode;
+import java.util.List;
 
 public class KmlQueryRow
 {
@@ -58,7 +58,7 @@ public class KmlQueryRow
                 formatArgs[i] = "";
         }
         final String leadingDigits = formatArgs[0].replaceAll("[^0-9].*$", "");
-        sosa = Integer.toBinaryString(Integer.valueOf(leadingDigits));
+        sosa = Integer.toBinaryString(Integer.parseInt(leadingDigits));
         if (formatArgs[1].length() == 0 || formatArgs[2].length() == 0)
             latitude = longitude = null;
         else

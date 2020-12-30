@@ -34,14 +34,11 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-import org.apache.log4j.Logger;
-
-import com.hp.hpl.jena.query.QueryExecutionFactory;
-import com.hp.hpl.jena.query.QuerySolutionMap;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.Syntax;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QuerySolutionMap;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.Syntax;
+import org.apache.jena.rdf.model.Model;
 
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
@@ -51,11 +48,14 @@ import de.micromata.opengis.kml.v_2_2_0.LineString;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Snippet;
 
-@SuppressWarnings("deprecation")
+import org.apache.jena.rdf.model.ModelFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 // Snippet is deprecated, but how else can we set the required maxlines?
 public class KmlGenerator
 {
-    private static final Logger logger = Logger.getLogger(KmlGenerator.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(KmlGenerator.class.getName());
 
     private final Map<String, KmlQueryRow> all = new HashMap<String, KmlQueryRow>();
     private final Map<String, KmlQueryRow> leaves = new TreeMap<String, KmlQueryRow>();

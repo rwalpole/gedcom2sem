@@ -23,16 +23,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.Set;
 
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
+import org.apache.jena.reasoner.rulesys.Rule;
+import org.apache.jena.util.PrintUtil;
 import org.gedcom4j.parser.GedcomParserException;
-
-import com.hp.hpl.jena.rdf.model.InfModel;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.reasoner.rulesys.GenericRuleReasoner;
-import com.hp.hpl.jena.reasoner.rulesys.Rule;
-import com.hp.hpl.jena.util.PrintUtil;
 
 public class Convert
 {

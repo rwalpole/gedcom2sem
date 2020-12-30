@@ -1,1 +1,1 @@
-java -Xmx1024M -cp ${project.build.finalName}.jar gedcom2sem.gedsem.Convert conf/prefixes.ttl conf/rules/basic.rules conf/rules/additional.rules test/kennedy.ged test/geoMashup.rules test/integration.rules test/geoNamesCache.ttl kennedy.ttl
+java -Xmx1024M -cp ${project.build.finalName}.jar gedcom2sem.gedsem.Convert conf/prefixes.ttl conf/rules/Basic.rules conf/rules/Additional.rules test/kennedy.ged test/geoMashup.rules test/integration.rules test/geoNamesCache.ttl kennedy.ttl

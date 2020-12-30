@@ -30,6 +30,10 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.shared.PrefixMapping;
+import org.apache.jena.sparql.core.Prologue;
 import org.gedcom4j.parser.GedcomParserException;
 import org.junit.Assert;
 import org.junit.Assume;
@@ -38,15 +42,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import com.hp.hpl.jena.query.QueryExecutionFactory;
-import com.hp.hpl.jena.query.QuerySolutionMap;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFormatter;
-import com.hp.hpl.jena.query.Syntax;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.shared.PrefixMapping.Factory;
-import com.hp.hpl.jena.sparql.core.Prologue;
 
 /**
  * From a testing point of view, these are just smoke tests. The methods are rather snippets of code to
@@ -283,7 +278,7 @@ public class ReportDemo
         FileOutputStream outputStream = new FileOutputStream(OUT_DIR + queryFileName.replace(".arq", "") + ".txt");
         try
         {
-            final Prologue prologue = new Prologue(Factory.create().setNsPrefixes(model.getNsPrefixMap()));
+            final Prologue prologue = new Prologue(PrefixMapping.Factory.create().setNsPrefixes(model.getNsPrefixMap()));
             outputStream.write(ResultSetFormatter.asText(runQuery(), prologue).getBytes());
         }
         finally

@@ -7,14 +7,13 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.reasoner.Reasoner;
+import org.apache.jena.reasoner.ReasonerRegistry;
+import org.apache.jena.reasoner.ValidityReport;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.reasoner.Reasoner;
-import com.hp.hpl.jena.reasoner.ReasonerRegistry;
-import com.hp.hpl.jena.reasoner.ValidityReport;
 
 public class ValidationTest
 {
@@ -26,9 +25,9 @@ public class ValidationTest
         final Model schemaModel = ModelFactory.createDefaultModel();
         schemaModel.read("http://www.w3.org/2000/01/rdf-schema");
         schemaModel.read("http://www.w3.org/2002/07/owl");
-        schemaModel.read("http://vocab.org/relationship/.rdf");
+        schemaModel.read("https://vocab.org/relationship/rel-vocab-20100607.rdf");
         schemaModel.read("http://xmlns.com/foaf/spec/20100809.rdf");
-        schemaModel.read("http://vocab.org/bio/0.1/.rdf");
+        schemaModel.read("https://vocab.org/bio/schema.rdf");
         reasoner = ReasonerRegistry.getOWLReasoner();
         reasoner.bindSchema(schemaModel);
     }

@@ -14,10 +14,14 @@
 // @formatter:on
 package gedcom2sem.semweb;
 
+import org.apache.jena.vocabulary.OWL;
+import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.RDFS;
+import org.apache.jena.vocabulary.XSD;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.hp.hpl.jena.vocabulary.*;
 
 public enum Prefix
 {

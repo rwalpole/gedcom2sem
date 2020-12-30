@@ -15,18 +15,16 @@
 package gedcom2sem.gedsem;
 
 import gedcom2sem.io.FileNameArguments;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Statement;
+import org.gedcom4j.parser.GedcomParserException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Map;
 import java.util.Set;
 
-import org.gedcom4j.parser.GedcomParserException;
-
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Statement;
 
 public class Transform
 {
@@ -45,7 +43,7 @@ public class Transform
         System.err.println("written: " + modelOut.listStatements().toList().size());
     }
 
-    public static Model transform(final String... files) throws IOException, FileNotFoundException, MalformedURLException, GedcomParserException
+    public static Model transform(final String... files) throws IOException, GedcomParserException
     {
         final Set<Statement> inferredStatements = Convert.execute(files);
         final Model modelOut = createModel(extractNsPrefixes(inferredStatements));

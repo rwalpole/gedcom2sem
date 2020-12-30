@@ -14,15 +14,10 @@
 // @formatter:on
 package gedcom2sem.gedsem;
 
+import org.apache.jena.rdf.model.*;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.hp.hpl.jena.rdf.model.AnonId;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.ResIterator;
-import com.hp.hpl.jena.rdf.model.Resource;
 
 class SemanticGedcomModel
 {

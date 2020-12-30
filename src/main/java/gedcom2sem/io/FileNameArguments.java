@@ -40,14 +40,13 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.shared.PrefixMapping;
+import org.apache.jena.sparql.core.Prologue;
+import org.apache.jena.util.FileUtils;
 import org.gedcom4j.parser.GedcomParserException;
-
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.query.ResultSetFormatter;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.shared.PrefixMapping;
-import com.hp.hpl.jena.sparql.core.Prologue;
-import com.hp.hpl.jena.util.FileUtils;
 
 /** Responsible for i/o in formats dictated by extensions. */
 public class FileNameArguments

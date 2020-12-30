@@ -8,13 +8,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.apache.jena.rdf.model.Model;
 import org.gedcom4j.parser.GedcomParserException;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-
-import com.hp.hpl.jena.rdf.model.Model;
 
 public class ExportDemo
 {

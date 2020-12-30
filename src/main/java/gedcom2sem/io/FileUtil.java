@@ -14,12 +14,12 @@
 // @formatter:on
 package gedcom2sem.io;
 
+import org.apache.jena.util.FileUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
-import com.hp.hpl.jena.util.FileUtils;
 
 public class FileUtil
 {
